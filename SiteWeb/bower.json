@@ -1,0 +1,14 @@
+{
+  "name": "site-web",
+  "homepage": "https://github.com/bioub/Formation_JS_FullStack_2016_08",
+  "authors": [
+    "Romain Bohdanowicz <romain.bohdanowicz@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}

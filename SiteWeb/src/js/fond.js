@@ -1,3 +1,3 @@
-/**
- * Created by Administrateur on 24/08/2016.
- */
+setInterval(function() {
+    $('body').toggleClass('alternate');
+}, 3000);

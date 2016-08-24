@@ -1,0 +1,8 @@
+#horloge {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    bottom: 20%;
+    right: 20%;
+    border: 4px solid white;
+}
