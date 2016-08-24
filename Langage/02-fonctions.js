@@ -23,12 +23,12 @@
 
 // Anonymous Function Expression
     setTimeout(function() {
-        console.log('anonyme')
+        console.log('anonyme');
     }, 0);
 
 // Named Function Expression
     setTimeout(function bye() {
-        console.log('Bye')
+        console.log('Bye');
     }, 0);
 
     var addition = function(a, b) {

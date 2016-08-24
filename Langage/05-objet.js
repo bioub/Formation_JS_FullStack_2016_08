@@ -15,6 +15,9 @@ now.getYear = function() {
     return 1900 + Date.prototype.getYear.call(this);
 };
 
+// maBalise.innerHTML = 'Contenu'
+// maBalise.innerHtml = 'Contenu'
+
 console.log(now.getYear()); // 2016
 
 // On peut accéder aux membres d'un objet
@@ -120,5 +123,39 @@ console.log(typeof Voiture); // function
 console.log(typeof Voiture.prototype.rouler); // function
 
 // TODO Object.create et Object.defineProperty
+var adresse = {
+    voie: 'rue Dupont',
+    numero: '19'
+};
+
+Object.defineProperty(adresse, 'ville', {
+    value: 'Paris',
+    writable: false,
+    enumerable: false,
+    configurable: false
+});
+console.log(adresse.ville);
+//adresse.ville = 'Bordeaux'; // TypeError: Cannot assign to read only property 'ville' of #<Object>
+
+
+Object.defineProperty(adresse, 'complet', {
+    get: function() {
+        return this.numero + ' ' + this.voie + ' ' + this.ville
+    },
+    // set: function(adresseComplete) {
+    //   //
+    // },
+    enumerable: false,
+    configurable: false
+});
+console.log(adresse.complet);
+adresse.numero = '1 bis';
+console.log(adresse.complet);
+
+
+Object.preventExtensions(adresse); // pas de nouvelle prop
+Object.seal(adresse); // preventExtensions + toutes les propriétés à configurable = false
+Object.freeze(adresse); // seal + toutes les propriétés à writeable = false
+
 // TODO Héritage
 // TODO Design Pattern (Options...)
