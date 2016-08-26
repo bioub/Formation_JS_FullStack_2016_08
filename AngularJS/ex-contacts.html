@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bower_components/angular/angular-csp.css">
+</head>
+<body ng-controller="ContactCtrl">
+<form ng-submit="ajouter()">
+    <p>Prénom : <input ng-model="contact.prenom"></p>
+    <p>Nom : <input ng-model="contact.nom"></p>
+    <button type="submit">Ajouter</button>
+</form>
+<h2>Liste des contacts</h2>
+<p ng-hide="contacts.length">Pas encore de contact</p>
+<ul ng-show="contacts.length" ng-cloak>
+    <li ng-repeat="contact in contacts track by $index">
+        {{contact.prenom}} {{contact.nom}}
+        <button ng-click="supprimer($index)">-</button>
+    </li>
+</ul>
+<script src="bower_components/angular/angular.js"></script>
+<script>
+    angular.module('app', [])
+    .controller('ContactCtrl', function($scope) {
+        $scope.contacts = [];
+
+        $scope.ajouter = function() {
+          $scope.contacts.push({
+              prenom: $scope.contact.prenom,
+              nom: $scope.contact.nom
+          });
+        };
+
+        $scope.supprimer = function(i) {
+            $scope.contacts.splice(i, 1);
+        };
+    });
+</script>
+</body>
+</html>

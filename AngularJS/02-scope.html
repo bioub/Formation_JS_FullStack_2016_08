@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app>
+<div>
+    Prénoms : <input ng-model="prenoms" ng-list>
+</div>
+<p ng-repeat="prenom in prenoms track by $index">
+    Bonjour <span ng-bind="prenom"></span>
+    <span ng-if="$first">1er</span>
+</p>
+<script src="bower_components/angular/angular.js"></script>
+</body>
+</html>

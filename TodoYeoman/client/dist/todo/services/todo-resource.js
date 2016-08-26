@@ -1,0 +1,1 @@
+!function(o){"use strict";o.module("TodoYeoman").factory("TodoResource",["$resource",function(o){var r="/api/todos/:id",e={},n={};return o(r,e,n)}])}(window.angular);

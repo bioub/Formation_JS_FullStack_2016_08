@@ -1,0 +1,1 @@
+!function(e){"use strict";e.module("TodoYeoman",["ngResource","ngRoute","ngMessages"])}(window.angular);

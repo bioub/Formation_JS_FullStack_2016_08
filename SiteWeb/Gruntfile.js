@@ -11,7 +11,7 @@ module.exports = function(grunt) {
             options: {
                 cdn: {
                     jquery: {
-                        versions: ['3.1.0'],
+                        versions: ['3.1.0', '3.0.0'],
                         url: function(version) {
                             return '//code.jquery.com/jquery-' + version + '.min.js'
                         }
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             }
         },
         clean: {
-            dist: {pre: ['dist/*']},
+            preDist: ['dist/*'],
             postDist: ['.tmp']
         },
         copy: {
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-usemin');
 
     grunt.registerTask('dist', [
-        'clean:dist:pre',
+        'clean:preDist',
         'useminPrepare',
         'concat:generated',
         'uglify:generated',

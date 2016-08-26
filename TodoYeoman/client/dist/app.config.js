@@ -1,0 +1,1 @@
+!function(o){"use strict";o.module("TodoYeoman").config(["$locationProvider",function(o){o.html5Mode(!0)}])}(window.angular);
